@@ -1,2 +1,3 @@
 # testTriggers
-asd
+asd'
+'asd
