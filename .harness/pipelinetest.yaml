@@ -1,0 +1,40 @@
+pipeline:
+    name: pipelinetest
+    identifier: pipelinetest
+    projectIdentifier: GitSyncCI1
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: Github_connectors
+                build: <+input>
+    stages:
+        - stage:
+              name: buildstage
+              identifier: buildstage
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: k8sconn
+                          namespace: <+input>
+                          serviceAccountName: <+input>
+                          runAsUser: <+input>
+                          initTimeout: <+input>
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: sheell
+                                identifier: sheell
+                                spec:
+                                    connectorRef: docker_connector_in_git
+                                    image: <+input>
+                                    command: asdfsdaf
+                                    privileged: false
+                                description: fadsf
+              variables: []
