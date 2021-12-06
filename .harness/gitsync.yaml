@@ -1,0 +1,31 @@
+pipeline:
+    name: gitsync
+    identifier: gitsync
+    projectIdentifier: GitSyncCI1
+    orgIdentifier: default
+    tags: {}
+    stages:
+        - stage:
+              name: gitsync
+              identifier: gitsync
+              description: ""
+              type: CI
+              spec:
+                  cloneCodebase: false
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: account.testK8sConnector98SHbz9GXQ
+                          namespace: <+input>
+                  execution:
+                      steps:
+                          - step:
+                                type: Run
+                                name: run1
+                                identifier: run1
+                                spec:
+                                    connectorRef: account.testDockerConnectorTz237jUOWL
+                                    image: maven
+                                    command: echo test
+                                    privileged: false
+              variables: []
