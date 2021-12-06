@@ -1,0 +1,12 @@
+connector:
+  name: asdasd
+  identifier: asdasd
+  description:
+  orgIdentifier: default
+  projectIdentifier: GitSyncCI1
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: https://asdjhjasd.com
+    providerType: DockerHub
+    auth:
+      type: Anonymous
