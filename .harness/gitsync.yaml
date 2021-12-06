@@ -8,10 +8,9 @@ pipeline:
         - stage:
               name: gitsync
               identifier: gitsync
-              description: ""
               type: CI
               spec:
-                  cloneCodebase: false
+                  cloneCodebase: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
@@ -29,3 +28,8 @@ pipeline:
                                     command: echo test
                                     privileged: false
               variables: []
+    properties:
+        ci:
+            codebase:
+                connectorRef: account.testGitConnectorp45c3PcMXu
+                build: <+input>
