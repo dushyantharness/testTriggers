@@ -32,7 +32,7 @@ pipeline:
                                 name: sheell
                                 identifier: sheell
                                 spec:
-                                    connectorRef: docker_connector_in_git
+                                    connectorRef: <+input>
                                     image: <+input>
                                     command: asdfsdaf
                                     privileged: false
