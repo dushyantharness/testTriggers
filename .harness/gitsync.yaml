@@ -27,6 +27,15 @@ pipeline:
                                     image: maven
                                     command: echo test
                                     privileged: false
+                          - step:
+                                type: S3Upload
+                                name: upload
+                                identifier: upload
+                                spec:
+                                    connectorRef: <+input>
+                                    region: <+input>
+                                    bucket: <+input>
+                                    sourcePath: <+input>
               variables: []
     properties:
         ci:
