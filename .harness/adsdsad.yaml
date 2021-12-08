@@ -1,0 +1,33 @@
+inputSet:
+  identifier: "adsdsad"
+  name: "adsdsad"
+  orgIdentifier: "default"
+  projectIdentifier: "GitSyncCI1"
+  pipeline:
+    identifier: "gitsync"
+    stages:
+    - stage:
+        identifier: "gitsync"
+        type: "CI"
+        spec:
+          infrastructure:
+            type: "KubernetesDirect"
+            spec:
+              namespace: "asdasd"
+          execution:
+            steps:
+            - step:
+                identifier: "upload"
+                type: "S3Upload"
+                spec:
+                  connectorRef: "account.CIE2EAWSmwcJRAZ7cu"
+                  region: "us-east-1"
+                  bucket: "asdasdasd"
+                  sourcePath: "asdasdasd"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "master"
