@@ -36,6 +36,17 @@ pipeline:
                                     region: <+input>
                                     bucket: <+input>
                                     sourcePath: <+input>
+                          - step:
+                                type: BuildAndPushGCR
+                                name: asdasd
+                                identifier: asdasd
+                                spec:
+                                    connectorRef: <+input>
+                                    host: <+input>
+                                    projectID: <+input>
+                                    imageName: <+input>
+                                    tags: <+input>
+                                    optimize: true
               variables: []
     properties:
         ci:
