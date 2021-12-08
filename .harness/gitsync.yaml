@@ -46,6 +46,7 @@ pipeline:
                                     projectID: <+input>
                                     imageName: <+input>
                                     tags: <+input>
+                                    buildArgs: <+input>
                                     optimize: true
               variables: []
     properties:
