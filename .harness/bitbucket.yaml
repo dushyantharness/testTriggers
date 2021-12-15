@@ -1,0 +1,23 @@
+connector:
+  name: bitbucket
+  identifier: bitbucket
+  description:
+  orgIdentifier: default
+  projectIdentifier: GitSyncCI1
+  type: Bitbucket
+  spec:
+    url: https://bitbucket.dev.harness.io/scm/~harnessadmin
+    validationRepo: springboot
+    authentication:
+      type: Http
+      spec:
+        type: UsernamePassword
+        spec:
+          username: harnessadmin
+          passwordRef: bitbucketpass
+    apiAccess:
+      type: UsernameToken
+      spec:
+        username: harnessadmin
+        tokenRef: bitonpremtoken
+    type: Account
