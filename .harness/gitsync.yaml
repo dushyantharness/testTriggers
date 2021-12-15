@@ -25,29 +25,8 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: echo test
+                                    command: echo <+codebase.repourl>
                                     privileged: false
-                          - step:
-                                type: S3Upload
-                                name: upload
-                                identifier: upload
-                                spec:
-                                    connectorRef: <+input>
-                                    region: <+input>
-                                    bucket: <+input>
-                                    sourcePath: <+input>
-                          - step:
-                                type: BuildAndPushGCR
-                                name: asdasd
-                                identifier: asdasd
-                                spec:
-                                    connectorRef: <+input>
-                                    host: <+input>
-                                    projectID: <+input>
-                                    imageName: <+input>
-                                    tags: <+input>
-                                    buildArgs: <+input>
-                                    optimize: true
               variables: []
     properties:
         ci:
