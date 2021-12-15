@@ -14,7 +14,7 @@ pipeline:
                   infrastructure:
                       type: KubernetesDirect
                       spec:
-                          connectorRef: account.testK8sConnector98SHbz9GXQ
+                          connectorRef: account.testK8sConnectorvmIzIJziIq
                           namespace: <+input>
                   execution:
                       steps:
