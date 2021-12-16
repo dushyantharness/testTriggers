@@ -31,6 +31,6 @@ pipeline:
     properties:
         ci:
             codebase:
-                connectorRef: bitbucket
+                connectorRef: account.testGitConnector56WNEDbna3
                 repoName: springboot
                 build: <+input>
