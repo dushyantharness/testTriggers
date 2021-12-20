@@ -25,12 +25,15 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: echo <+codebase.repourl>
+                                    command: "if <+codebase.commitSha> == \"cd7c274fdbb19d9d1a24ee11999d466127dc1e27\"\r
+
+                                        then true\r
+
+                                        fi"
                                     privileged: false
               variables: []
     properties:
         ci:
             codebase:
-                connectorRef: account.testGitConnector56WNEDbna3
-                repoName: springboot
+                connectorRef: account.testGitConnectorpIs0r99ZOR
                 build: <+input>
