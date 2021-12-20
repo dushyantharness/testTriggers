@@ -29,6 +29,8 @@ pipeline:
 
                                         commit=<+codebase.commitSha>\r
 
+                                        echo $commit\r
+
                                         if [$commit == $code]\r
 
                                         then true\r
