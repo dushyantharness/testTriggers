@@ -19,39 +19,9 @@ pipeline:
 
                                         export commitSha1\r
 
-                                        targetBranch1=<+codebase.targetBranch>\r
+                                        targetBranch=<+codebase.targetBranch>\r
 
-                                        export targetBranch1\r
-
-                                        sourceBranch=<+codebase.sourceBranch>\r
-
-                                        export sourceBranch1\r
-
-                                        prNumber=<+codebase.prNumber>\r
-
-                                        export prNumber\r
-
-                                        prTitle=<+codebase.prTitle>\r
-
-                                        export prTitle\r
-
-                                        export commitRef=<+codebase.commitRef>\r
-
-                                        echo <+codebase.repoUrl>\r
-
-                                        echo <+codebase.gitUserId>\r
-
-                                        echo <+codebase.gitUserEmail>\r
-
-                                        echo <+codebase.gitUser>\r
-
-                                        echo <+codebase.gitUserAvatar>\r
-
-                                        echo <+codebase.pullRequestLink>\r
-
-                                        echo <+codebase.pullRequestBody>\r
-
-                                        echo <+codebase.state>"
+                                        export targetBranch"
                                     privileged: false
                                     outputVariables:
                                         - name: commitsha1
