@@ -31,7 +31,7 @@ pipeline:
 
                                         echo $commit\r
 
-                                        if [$commit == $code]\r
+                                        if [$commit==$code]\r
 
                                         then true\r
 
