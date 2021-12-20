@@ -20,7 +20,7 @@ pipeline:
                                         export commitsha1"
                                     privileged: false
                                     outputVariables:
-                                        - name: commitSha1
+                                        - name: commitsha1
                                         - name: targetBranch1
                                         - name: sourceBranch1
                                         - name: prNumber
