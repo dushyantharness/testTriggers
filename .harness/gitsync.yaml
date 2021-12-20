@@ -15,9 +15,9 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: "commitsha1=<+codebase.commitSha>\r
+                                    command: "commitSha1=<+codebase.commitSha>\r
 
-                                        export commitsha1\r
+                                        export commitSha1\r
 
                                         targetBranch1=<+codebase.targetBranch>\r
 
@@ -25,7 +25,33 @@ pipeline:
 
                                         sourceBranch=<+codebase.sourceBranch>\r
 
-                                        export sourceBranch"
+                                        export sourceBranch1\r
+
+                                        prNumber=<+codebase.prNumber>\r
+
+                                        export prNumber\r
+
+                                        prTitle=<+codebase.prTitle>\r
+
+                                        export prTitle\r
+
+                                        export commitRef=<+codebase.commitRef>\r
+
+                                        echo <+codebase.repoUrl>\r
+
+                                        echo <+codebase.gitUserId>\r
+
+                                        echo <+codebase.gitUserEmail>\r
+
+                                        echo <+codebase.gitUser>\r
+
+                                        echo <+codebase.gitUserAvatar>\r
+
+                                        echo <+codebase.pullRequestLink>\r
+
+                                        echo <+codebase.pullRequestBody>\r
+
+                                        echo <+codebase.state>"
                                     privileged: false
                                     outputVariables:
                                         - name: commitsha1
@@ -38,6 +64,7 @@ pipeline:
                   cloneCodebase: true
               name: gitsync
               identifier: gitsync
+              variables: []
     properties:
         ci:
             codebase:
