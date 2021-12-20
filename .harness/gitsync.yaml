@@ -21,12 +21,6 @@ pipeline:
                                         targetBranch=<+codebase.targetBranch>
                                         export targetBranch
                                     privileged: false
-                                    outputVariables:
-                                        - name: commitsha1
-                                        - name: targetBranch1
-                                        - name: sourceBranch
-                                        - name: prNumber
-                                        - name: prTitle
                                 name: run1
                                 identifier: run1
                   cloneCodebase: true
