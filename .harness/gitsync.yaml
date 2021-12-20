@@ -25,9 +25,9 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: "code = \"cd7c274fdbb19d9d1a24ee11999d466127dc1e2\"\r
+                                    command: "code=cd7c274fdbb19d9d1a24ee11999d466127dc1e2\r
 
-                                        if [<+codebase.commitSha>==$code]\r
+                                        if [<+codebase.commitSha> == $code]\r
 
                                         then true\r
 
