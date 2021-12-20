@@ -13,26 +13,19 @@ pipeline:
                           - step:
                                 type: Run
                                 spec:
-                                    privileged: false
-                                    outputVariables:
-                                        - name: commitSha
-                                        - name: targetBranch
-                                        - name: sourceBranch
-                                        - name: prNumber
-                                        - name: prTitle
-                                    image: maven
                                     connectorRef: account.testDockerConnectorTz237jUOWL
-                                    command: "commitSha=<+codebase.commitSha>\r
+                                    image: maven
+                                    command: "commitSha1=<+codebase.commitSha>\r
 
-                                        export commitSha\r
+                                        export commitSha1\r
 
-                                        targetBranch=<+codebase.targetBranch>\r
+                                        targetBranch1=<+codebase.targetBranch>\r
 
-                                        export targetBranch\r
+                                        export targetBranch1\r
 
                                         sourceBranch=<+codebase.sourceBranch>\r
 
-                                        export sourceBranch\r
+                                        export sourceBranch1\r
 
                                         prNumber=<+codebase.prNumber>\r
 
@@ -59,6 +52,13 @@ pipeline:
                                         echo <+codebase.pullRequestBody>\r
 
                                         echo <+codebase.state>"
+                                    privileged: false
+                                    outputVariables:
+                                        - name: commitSha1
+                                        - name: targetBranch1
+                                        - name: sourceBranch1
+                                        - name: prNumber
+                                        - name: prTitle
                                 name: run1
                                 identifier: run1
                   cloneCodebase: true
