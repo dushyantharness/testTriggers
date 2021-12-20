@@ -35,5 +35,5 @@ pipeline:
     properties:
         ci:
             codebase:
-                connectorRef: account.testGitConnectorpIs0r99ZOR
+                connectorRef: account.testGitConnectorVFfUKHUp3T
                 build: <+input>
