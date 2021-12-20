@@ -17,12 +17,20 @@ pipeline:
                                     image: maven
                                     command: "commitsha1=<+codebase.commitSha>\r
 
-                                        export commitsha1"
+                                        export commitsha1\r
+
+                                        targetBranch1=<+codebase.targetBranch>\r
+
+                                        export targetBranch1\r
+
+                                        sourceBranch=<+codebase.sourceBranch>\r
+
+                                        export sourceBranch"
                                     privileged: false
                                     outputVariables:
                                         - name: commitsha1
                                         - name: targetBranch1
-                                        - name: sourceBranch1
+                                        - name: sourceBranch
                                         - name: prNumber
                                         - name: prTitle
                                 name: run1
