@@ -25,18 +25,50 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: "code=\"638648a014d393c1ae2a75615004439bc23a38d5\"\r
+                                    command: "commitSha=<+codebase.commitSha>\r
 
-                                        commit=<+codebase.commitSha>\r
+                                        export commitSha\r
 
-                                        echo $commit\r
+                                        targetBranch=<+codebase.targetBranch>\r
 
-                                        if [$commit==$code]\r
+                                        export targetBranch\r
 
-                                        then true\r
+                                        sourceBranch=<+codebase.sourceBranch>\r
 
-                                        fi"
+                                        export sourceBranch\r
+
+                                        prNumber=<+codebase.prNumber>\r
+
+                                        export prNumber\r
+
+                                        prTitle=<+codebase.prTitle>\r
+
+                                        export prTitle\r
+
+                                        export commitRef=<+codebase.commitRef>\r
+
+                                        echo <+codebase.repoUrl>\r
+
+                                        echo <+codebase.gitUserId>\r
+
+                                        echo <+codebase.gitUserEmail>\r
+
+                                        echo <+codebase.gitUser>\r
+
+                                        echo <+codebase.gitUserAvatar>\r
+
+                                        echo <+codebase.pullRequestLink>\r
+
+                                        echo <+codebase.pullRequestBody>\r
+
+                                        echo <+codebase.state>"
                                     privileged: false
+                                    outputVariables:
+                                        - name: commitSha
+                                        - name: targetBranch
+                                        - name: sourceBranch
+                                        - name: prNumber
+                                        - name: prTitle
               variables: []
     properties:
         ci:
