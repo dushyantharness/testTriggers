@@ -27,7 +27,9 @@ pipeline:
                                     image: maven
                                     command: "code=\"638648a014d393c1ae2a75615004439bc23a38d5\"\r
 
-                                        commit = <+codebase.commitSha>\r
+                                        commit=<+codebase.commitSha>\r
+
+                                        echo commit\r
 
                                         if [$commit == $code]\r
 
