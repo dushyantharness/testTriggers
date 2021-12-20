@@ -1,30 +1,27 @@
 pipeline:
-    name: gitsync
-    identifier: gitsync
-    projectIdentifier: GitSyncCI1
-    orgIdentifier: default
-    tags: {}
     stages:
         - stage:
-              name: gitsync
-              identifier: gitsync
               type: CI
               spec:
-                  cloneCodebase: true
                   infrastructure:
                       type: KubernetesDirect
                       spec:
-                          connectorRef: account.testK8sConnector1oEpaAcyE6
                           namespace: <+input>
+                          connectorRef: account.testK8sConnector1oEpaAcyE6
                   execution:
                       steps:
                           - step:
                                 type: Run
-                                name: run1
-                                identifier: run1
                                 spec:
-                                    connectorRef: account.testDockerConnectorTz237jUOWL
+                                    privileged: false
+                                    outputVariables:
+                                        - name: commitSha
+                                        - name: targetBranch
+                                        - name: sourceBranch
+                                        - name: prNumber
+                                        - name: prTitle
                                     image: maven
+                                    connectorRef: account.testDockerConnectorTz237jUOWL
                                     command: "commitSha=<+codebase.commitSha>\r
 
                                         export commitSha\r
@@ -62,16 +59,17 @@ pipeline:
                                         echo <+codebase.pullRequestBody>\r
 
                                         echo <+codebase.state>"
-                                    privileged: false
-                                    outputVariables:
-                                        - name: commitSha
-                                        - name: targetBranch
-                                        - name: sourceBranch
-                                        - name: prNumber
-                                        - name: prTitle
-              variables: []
+                                name: run1
+                                identifier: run1
+                  cloneCodebase: true
+              name: gitsync
+              identifier: gitsync
     properties:
         ci:
             codebase:
                 connectorRef: account.testGitConnectorVFfUKHUp3T
                 build: <+input>
+    projectIdentifier: GitSyncCI1
+    orgIdentifier: default
+    name: gitsync
+    identifier: gitsync
