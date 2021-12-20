@@ -15,9 +15,9 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: "commitsha11=<+codebase.commitSha>\r
+                                    command: "commitsha1=<+codebase.commitSha>\r
 
-                                        export commitsha11"
+                                        export commitsha1"
                                     privileged: false
                                     outputVariables:
                                         - name: commitSha1
