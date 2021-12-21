@@ -18,8 +18,23 @@ pipeline:
                                     command: |-
                                         commitSha1=<+codebase.commitSha>
                                         export commitSha1
-                                        targetBranch=<+codebase.targetBranch>
-                                        export targetBranch
+                                        targetBranch1=<+codebase.targetBranch>
+                                        export targetBranch1
+                                        sourceBranch=<+codebase.sourceBranch>
+                                        export sourceBranch1
+                                        prNumber=<+codebase.prNumber>
+                                        export prNumber
+                                        prTitle=<+codebase.prTitle>
+                                        export prTitle
+                                        export commitRef=<+codebase.commitRef>
+                                        echo <+codebase.repoUrl>
+                                        echo <+codebase.gitUserId>
+                                        echo <+codebase.gitUserEmail>
+                                        echo <+codebase.gitUser>
+                                        echo <+codebase.gitUserAvatar>
+                                        echo <+codebase.pullRequestLink>
+                                        echo <+codebase.pullRequestBody>
+                                        echo <+codebase.state>
                                     privileged: false
                                 name: run1
                                 identifier: run1
