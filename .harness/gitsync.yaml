@@ -15,7 +15,22 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: echo <+codebase.pullRequestBody>
+                                    command: |-
+                                        targetBranch1=<+codebase.targetBranch>
+                                        export targetBranch1
+                                        sourceBranch=<+codebase.sourceBranch>
+                                        export sourceBranch1
+                                        prNumber=<+codebase.prNumber>
+                                        export prNumber
+                                        prTitle=<+codebase.prTitle>
+                                        export prTitle
+                                        echo <+codebase.repoUrl>
+                                        echo <+codebase.gitUserId>
+                                        echo <+codebase.gitUserEmail>
+                                        echo <+codebase.gitUser>
+                                        echo <+codebase.gitUserAvatar>
+                                        echo <+codebase.pullRequestLink>
+                                        echo <+codebase.state>
                                     privileged: false
                                 name: run1
                                 identifier: run1
