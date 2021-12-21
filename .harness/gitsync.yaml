@@ -25,8 +25,7 @@ pipeline:
                                         prNumber=<+codebase.prNumber>
                                         export prNumber
                                         echo <+codebase.prTitle>
-                                        commitRef=<+codebase.commitRef>
-                                        export commitRef
+                                        echo <+codebase.commitRef>
                                         echo <+codebase.repoUrl>
                                         echo <+codebase.gitUserId>
                                         echo <+codebase.gitUserEmail>
