@@ -16,8 +16,7 @@ pipeline:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
                                     command: |-
-                                        echo <+codebase.prTitle>
-                                        echo <+codebase.repoUrl>
+                                        
                                         echo <+codebase.gitUserId>
                                         echo <+codebase.gitUserEmail>
                                         echo <+codebase.gitUser>
