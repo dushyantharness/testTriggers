@@ -1,0 +1,22 @@
+connector:
+  name: testinggit
+  identifier: testinggit
+  description:
+  orgIdentifier: default
+  projectIdentifier: GitSyncCI1
+  type: Github
+  spec:
+    url: https://github.com/wings-software/springboot
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: dushyant.sharma@harness.io
+          tokenRef: dushyanttoken
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: dushyanttoken
+    executeOnDelegate: false
+    type: Repo
