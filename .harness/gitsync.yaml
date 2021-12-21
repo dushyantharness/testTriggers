@@ -15,7 +15,7 @@ pipeline:
                                 spec:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
-                                    command: echo <+codebase.commitRef>
+                                    command: echo <+codebase.pullRequestBody>
                                     privileged: false
                                 name: run1
                                 identifier: run1
