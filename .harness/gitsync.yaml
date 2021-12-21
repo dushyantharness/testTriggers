@@ -18,7 +18,7 @@ pipeline:
                                     command: |-
                                         commitSha1=<+codebase.commitSha>
                                         export commitSha1
-                                        targetBranch1=<+codebase.targetBranch
+                                        targetBranch1=<+codebase.targetBranch>
                                         export targetBranch1
                                         sourceBranch=<+codebase.sourceBranch>
                                         export sourceBranch1
