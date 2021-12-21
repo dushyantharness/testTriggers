@@ -22,8 +22,7 @@ pipeline:
                                         export sourceBranch1
                                         prNumber=<+codebase.prNumber>
                                         export prNumber
-                                        prTitle=<+codebase.prTitle>
-                                        export prTitle
+                                        echo <+codebase.prTitle>
                                         echo <+codebase.repoUrl>
                                         echo <+codebase.gitUserId>
                                         echo <+codebase.gitUserEmail>
