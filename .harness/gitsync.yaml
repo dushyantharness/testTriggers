@@ -16,14 +16,6 @@ pipeline:
                                     connectorRef: account.testDockerConnectorTz237jUOWL
                                     image: maven
                                     command: |-
-                                        commitSha1=<+codebase.commitSha>
-                                        export commitSha1
-                                        targetBranch1=<+codebase.targetBranch>
-                                        export targetBranch1
-                                        sourceBranch=<+codebase.sourceBranch>
-                                        export sourceBranch1
-                                        prNumber=<+codebase.prNumber>
-                                        export prNumber
                                         echo <+codebase.prTitle>
                                         echo <+codebase.commitRef>
                                         echo <+codebase.repoUrl>
